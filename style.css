@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+nav {
+  background: #111;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: 'Orbitron', sans-serif;
+  transition: 0.3s;
+}
+
+nav a[data-target="home"] { color: #0ff; }
+nav a[data-target="tentang"] { color: #f4a261; }
+nav a[data-target="pendidikan"] { color: #2a9d8f; }
+nav a[data-target="hobi"] { color: #e9c46a; }
+nav a[data-target="kontak"] { color: #f72585; }
+
+nav a.active,
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px currentColor;
+}
+
+main {
+  padding: 60px 20px;
+  min-height: 80vh;
+}
+
+.section {
+  display: none;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 15px;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.section.active {
+  display: block;
+}
+
+img {
+  width: 180px;
+  border-radius: 50%;
+  border: 4px solid #0ff;
+  margin: 20px 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.edu-gallery {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 30px;
+}
+
+.edu-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.edu-item img:hover {
+  transform: scale(1.05);
+}
+
+.edu-item p {
+  margin-top: 10px;
+  color: #0ff;
+}
+
+.sosial-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.sosial-icons a img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 10px;
+}
+
+.sosial-icons a img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px currentColor;
+}
